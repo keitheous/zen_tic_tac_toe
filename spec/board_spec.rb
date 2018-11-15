@@ -9,24 +9,28 @@ RSpec.describe Board do
         expect(board.class).to be(Board)
       end
 
-      it 'has x upper range of 2' do
-        expect(board.x).to eq(2)
+      it 'has x range of 0 - 2' do
+        expect(board.x_min).to eq(0)
+        expect(board.x_max).to eq(2)
       end
 
-      it 'has y upper range of 2' do
-        expect(board.y).to eq(2)
+      it 'has y range of 0 - 2' do
+        expect(board.x_min).to eq(0)
+        expect(board.x_max).to eq(2)
       end
     end
 
     describe 'customize instance with dimension 5' do
       board = Board.new(5)
 
-      it 'has x upper range of 4' do
-        expect(board.x).to eq(4)
+      it 'has x range of 0 - 4' do
+        expect(board.x_min).to eq(0)
+        expect(board.x_max).to eq(4)
       end
 
-      it 'has y upper range of 4' do
-        expect(board.y).to eq(4)
+      it 'has y range of 0 - 4' do
+        expect(board.x_min).to eq(0)
+        expect(board.x_max).to eq(4)
       end
     end
   end
