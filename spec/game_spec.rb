@@ -5,10 +5,13 @@ RSpec.describe Game do
   let(:a_player) {Player.new('X')}
   let(:another_player) {Player.new('O')}
 
-
   describe '.initialize' do
     it 'creates a collection of players' do
       expect(game.players).to eq([])
+    end
+
+    it 'starts with round 1' do
+      expect(game.round).to eq(1)
     end
   end
 
@@ -25,6 +28,20 @@ RSpec.describe Game do
       game.register_player(another_player)
 
       expect(game.players.count).to eq(2)
+    end
+  end
+
+  describe '#next_round' do
+    it 'increment round by 1 everytime' do
+      game.next_round
+      expect(game.round).to eq(2)
+
+      game.next_round
+      expect(game.round).to eq(3)
+
+      game.next_round
+      game.next_round
+      expect(game.round).to eq(5)
     end
   end
 end
