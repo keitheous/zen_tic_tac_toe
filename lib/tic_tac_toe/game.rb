@@ -11,6 +11,10 @@ class Game
   end
 
   def next_round
-    @round = round + 1
+    @round += 1
+  end
+
+  def players_turn
+    players.rotate(round - 1)[0]
   end
 end
